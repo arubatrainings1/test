@@ -1,0 +1,29 @@
+- hosts: access_1_sw
+  roles:
+    - role: arubanetworks.aoscx_role
+  gather_facts: false
+
+  tasks:
+    - name: Create VLAN 30 - Students
+      aoscx_vlan:
+        vlan_id: "{{students_vlan.id}}"
+        name: "{{students_vlan.name}}"
+
+    - name: Create VLAN 40 - Staff
+      aoscx_vlan:
+        vlan_id: "{{staff_vlan.id}}"
+        name: "{{staff_vlan.name}}"
+
+    - name: Configure IP VLAN 30
+      aoscx_vlan_interface:
+        vlan_id: "{{students_vlan.id}}"
+        ipv4: "{{students_vlan.ipv4}}"
+
+
+    - name: Configure Interface 1/1/1 - vlan trunk allowed 30
+      aoscx_l2_interface:
+        interface: "{{students_vlan.interface}}"
+        vlan_mode: trunk
+        vlan_trunks: ["{{students_vlan.id}}", "{{staff_vlan.id}}"]
+        native_vlan_id: "{{students_vlan.id}}"
+

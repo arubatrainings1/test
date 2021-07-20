@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "0ba30d6a-2fb0-4814-94b9-83a8ab82abc1",
+		"name": "AOSCX-VLAN-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://10.251.1.101/rest/v10.04/login?username=admin&password=aruba123",
+					"protocol": "https",
+					"host": [
+						"10",
+						"251",
+						"1",
+						"101"
+					],
+					"path": [
+						"rest",
+						"v10.04",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin"
+						},
+						{
+							"key": "password",
+							"value": "aruba123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vlan check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://10.251.1.101/rest/v10.04/system/vlans",
+					"protocol": "https",
+					"host": [
+						"10",
+						"251",
+						"1",
+						"101"
+					],
+					"path": [
+						"rest",
+						"v10.04",
+						"system",
+						"vlans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete vlan 101",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://10.251.1.101/rest/v10.04/system/vlans/101",
+					"protocol": "https",
+					"host": [
+						"10",
+						"251",
+						"1",
+						"101"
+					],
+					"path": [
+						"rest",
+						"v10.04",
+						"system",
+						"vlans",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vlan create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": 101,\n\"name\": \"Voice VLAN\"\n}\n"
+				},
+				"url": {
+					"raw": "https://10.251.1.101/rest/v10.04/system/vlans",
+					"protocol": "https",
+					"host": [
+						"10",
+						"251",
+						"1",
+						"101"
+					],
+					"path": [
+						"rest",
+						"v10.04",
+						"system",
+						"vlans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vlan check again",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://10.251.1.101/rest/v10.04/system/vlans",
+					"protocol": "https",
+					"host": [
+						"10",
+						"251",
+						"1",
+						"101"
+					],
+					"path": [
+						"rest",
+						"v10.04",
+						"system",
+						"vlans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://10.251.1.101/rest/v10.04/logout",
+					"protocol": "https",
+					"host": [
+						"10",
+						"251",
+						"1",
+						"101"
+					],
+					"path": [
+						"rest",
+						"v10.04",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,39 @@
+--- 
+all:
+  hosts:
+    AD_server: 
+    Clearpass_Server: 
+  children: 
+    south_wing: 
+      hosts: 
+        access_1_sw:
+          device_id: 3
+        core_1_sw:
+          device_id: 1 
+    west_wing:
+      children: 
+        ubuntu_servers: 
+          hosts:
+            ubuntu_awx: 
+              ansible_host: 10.251.1.201
+              ansible_user: student
+              ansible_password: aruba
+        ww_devices: 
+          hosts:
+            Aruba_gateway: 
+            core_2_ww: 
+                ansible_host: 10.251.1.102
+                ansible_user: admin
+                ansible_password: !vault |
+                  $ANSIBLE_VAULT;1.1;AES256
+                  36373137653162316264613639613032306338653738623562333666646566353165613331373664
+                  6431353337376630653339646631353736346239346361360a383637356233343766396434373734
+                  63666135316530636465393233353832653465633165386431656232613834386334643162346261
+                  6238386563363262380a643663303339346338346539393063306337613564316532636637656634
+                  3034
+                ansible_connection: httpapi
+                ansible_network_os: aoscx
+                ansible_httpapi_use_ssl: True
+                ansible_acx_no_proxy: True
+                ansible_httpapi_validate_certs: False
+                device_id: 2
