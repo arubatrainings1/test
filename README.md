@@ -1,1 +1,2 @@
-# # Aruba Network automation training
+Configuring Aruba Network Automation Solutions  
+
