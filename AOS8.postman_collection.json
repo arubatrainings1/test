@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "ea4671fa-6e47-4d86-8b3b-106e5b701625",
+		"name": "AOS8 postman collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set('SESSION', pm.cookies.get('JSESSIONID'))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Qlbl9KJZ1u6eDV96Mw2euPnLUt8Jduol",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://10.10.10.1:4343/v1/api/login?username=admin&password=admin1",
+					"protocol": "https",
+					"host": [
+						"10",
+						"10",
+						"10",
+						"1"
+					],
+					"port": "4343",
+					"path": [
+						"v1",
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin"
+						},
+						{
+							"key": "password",
+							"value": "admin1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get vlan name",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Set-Cookie",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://10.10.10.1:4343/v1/configuration/object/vlan_name?config_path=/mm/mynode&UIDARUBA={{SESSION}}",
+					"protocol": "https",
+					"host": [
+						"10",
+						"10",
+						"10",
+						"1"
+					],
+					"port": "4343",
+					"path": [
+						"v1",
+						"configuration",
+						"object",
+						"vlan_name"
+					],
+					"query": [
+						{
+							"key": "config_path",
+							"value": "/mm/mynode"
+						},
+						{
+							"key": "UIDARUBA",
+							"value": "{{SESSION}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get vlan id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://10.10.10.1:4343/v1/configuration/object/vlan_id?config_path=/mm/mynode&UIDARUBA={{SESSION}}",
+					"protocol": "https",
+					"host": [
+						"10",
+						"10",
+						"10",
+						"1"
+					],
+					"port": "4343",
+					"path": [
+						"v1",
+						"configuration",
+						"object",
+						"vlan_id"
+					],
+					"query": [
+						{
+							"key": "config_path",
+							"value": "/mm/mynode"
+						},
+						{
+							"key": "UIDARUBA",
+							"value": "{{SESSION}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "config new vlan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "payload",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 198\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://10.10.10.1:4343/v1/configuration/object/vlan_id?config_path=%2Fmm&json=payload&UIDARUBA={{SESSION}}",
+					"protocol": "https",
+					"host": [
+						"10",
+						"10",
+						"10",
+						"1"
+					],
+					"port": "4343",
+					"path": [
+						"v1",
+						"configuration",
+						"object",
+						"vlan_id"
+					],
+					"query": [
+						{
+							"key": "config_path",
+							"value": "%2Fmm"
+						},
+						{
+							"key": "json",
+							"value": "payload"
+						},
+						{
+							"key": "UIDARUBA",
+							"value": "{{SESSION}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "write mem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://10.10.10.1:4343/v1/configuration/object/write_memory?config_path=mm&UIDARUBA={{SESSION}}\n",
+					"protocol": "https",
+					"host": [
+						"10",
+						"10",
+						"10",
+						"1"
+					],
+					"port": "4343",
+					"path": [
+						"v1",
+						"configuration",
+						"object",
+						"write_memory"
+					],
+					"query": [
+						{
+							"key": "config_path",
+							"value": "mm"
+						},
+						{
+							"key": "UIDARUBA",
+							"value": "{{SESSION}}\n"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
