@@ -1,0 +1,11 @@
+- hosts: all
+  roles:
+    - role: arubanetworks.aoscx_role
+  gather_facts: no
+  vars:
+    ansible_python_interpreter: /home/student/ansible_venv/bin/python3
+    ansible_connection: network_cli
+  tasks:
+     - include_role:
+         name: show_info
+       when: device_id == 2

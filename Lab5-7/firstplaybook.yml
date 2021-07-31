@@ -1,0 +1,27 @@
+--- 
+- name: "install and show tree task"
+  gather_facts: no
+  hosts: ubuntu_servers  
+  tasks: 
+    - 
+      name: "install tree package"
+      pip: 
+        name: 
+          - tree
+          - ansible
+        state: present
+
+    - 
+      name: "show tree task"
+      raw: pip show tree
+
+
+- name: this is play2.
+  gather_facts: no
+  hosts: ubuntu_servers
+
+- name: this is play3.
+  gather_facts: no
+  hosts: ubuntu_servers
+
+
