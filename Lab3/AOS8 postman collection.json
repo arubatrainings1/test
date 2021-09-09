@@ -21,7 +21,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.environment.set('SESSION', pm.cookies.get('JSESSIONID'))"
+							"pm.environment.set('SESSION', pm.cookies.get('SESSION'))"
 						],
 						"type": "text/javascript"
 					}
