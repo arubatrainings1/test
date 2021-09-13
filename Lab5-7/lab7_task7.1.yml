@@ -1,4 +1,4 @@
-- hosts:
+- hosts: access_1_sw
   collections:
     - arubanetworks.aoscx
   vars:
