@@ -33,6 +33,7 @@
 ######         lab6_task4_1_2.yml
 ######         lab6_task4_2.yml
 ######         lab6_task5_1.yml
+######         lab7_task7.1.yml
 ######         new_show_role.yml
 ######         show_info.yml
 ######         south_wing.yml
