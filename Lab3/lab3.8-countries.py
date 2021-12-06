@@ -3,7 +3,7 @@ import requests
 import urllib3 # this disables warning about self-signed certs
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-url = 'https://restcountries.eu/rest/v2/all'  # countries api
+url = 'https://restcountries.com/v2/all'  # countries api
 response = requests.get(url)  # opening a network and fetching a data
 print(response) # response object
 print(response.status_code)  # status code, success:200
