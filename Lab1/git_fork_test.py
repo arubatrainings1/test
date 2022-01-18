@@ -1,7 +1,7 @@
 #fix the below python code, then do a pill request. 
 
 greeting ="Hello World"
-Print(greeting)
+print(greeting) #fixed Case sensitive p
 
 
 #This is used to test pull request after git fork.
