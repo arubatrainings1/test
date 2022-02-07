@@ -1,7 +1,8 @@
 #fix the below python code, then do a pill request. 
+#fixed by davidgearing
 
 greeting ="Hello World"
-Print(greeting)
+print(greeting)
 
 
 #This is used to test pull request after git fork.
