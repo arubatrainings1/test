@@ -1,4 +1,4 @@
-#fix the below python code, then do a pill request. 
+#fix the below python code, then do a pull request. 
 
 greeting ="Hello World"
 print(greeting)
