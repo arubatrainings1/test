@@ -1,6 +1,6 @@
 # Configuring Aruba Network Automation Solutions  
 
-#### Folder PATH listing
+#### Folder PATH listing:
 ###### │   README.md
 ###### │
 ###### ├───Lab1
