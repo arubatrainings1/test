@@ -1,7 +1,7 @@
-#fix the below python code, then do a pill request. 
+#fix the below python code, then do a pull request. 
 
 greeting ="Hello World"
-Print(greeting)
+print(greeting)
 
 
 #This is used to test pull request after git fork.
