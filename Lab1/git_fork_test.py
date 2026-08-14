@@ -2,7 +2,7 @@
 
 greeting ="Hello World"
 print(greeting)
-#updated by Jithesh solomon
+#updated by Jithesh Solomon
 
 #This is used to test pull request after git fork.
 Note: Python is a case-sensitive programming language. print() is a built-in python function.The correct format is lower case, print().
